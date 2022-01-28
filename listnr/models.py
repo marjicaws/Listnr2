@@ -6,9 +6,9 @@ class Listnr(models.Model):
     name = models.CharField(max_length=256)
     bio = models.CharField(max_length=400, default='A Music Lover!')
     career = models.CharField(max_length=200, default='Full-time Listnr')
-
+    
     def __str__(self):
-        return name
+        return self.name
     
 class Song(models.Model):
     title = models.CharField(max_length=256)
@@ -17,7 +17,7 @@ class Song(models.Model):
     name_id = models.ForeignKey(Listnr, on_delete=models.CASCADE, related_name='songs'  )
 
     def __str__(self):
-        return title
+        return self.title
 
 class Review(models.Model):
     review = models.CharField(max_length=300)
@@ -30,4 +30,5 @@ class Review(models.Model):
     writing_changes = models.BooleanField(default=False)
 
     def __str__(self):
-        return rev_title
+        return self.rev_title
+
