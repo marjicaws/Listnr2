@@ -14,7 +14,6 @@ from pathlib import Path
 import os 
 import dj_database_url
 from dotenv import load_dotenv
-
 load_dotenv()
 IS_PRODUCTION = os.getenv('PRODUCTION') == 'yes'
 
@@ -23,7 +22,6 @@ IS_PRODUCTION = os.getenv('PRODUCTION') == 'yes'
 if IS_PRODUCTION:
     BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 else:
-
     BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
@@ -145,8 +143,7 @@ USE_TZ = True
 if IS_PRODUCTION:
     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
     STATIC_URL = '/static/'
-    STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),)
+    STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 else:
     STATIC_URL = 'static/'
 
