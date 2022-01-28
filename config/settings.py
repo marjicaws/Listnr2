@@ -37,7 +37,7 @@ SECRET_KEY = 'django-insecure-mm5tlabhrbui19@4^e#q)0d@-&dxrfjx2#)9k4+8sp&r0*&xl@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['listnr-database.herokuapp.com']
+ALLOWED_HOSTS = ['listnr-database.herokuapp.com', 'localhost']
 
 
 # Application definition
@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'listnr',
+    'rest_framework_simplejwt',
 ]
 
 MIDDLEWARE = [
@@ -90,19 +91,21 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 if IS_PRODUCTION:
     DATABASES = {
+        'default': dj_database_url.config(conn_max_age=600, ssl_require=True)
+    }
+else:
+    DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'listnr',
         'USER': 'listnr_admin',
         'PASSWORD': 'password',
-        'HOST': 'localhost'
+        'HOST': 'localhost',
 
     }
 }
-else:
-    DATABASES = {
-    'default': dj_database_url.config(conn_max_age=600, ssl_require=True)
-}
+    
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
@@ -151,3 +154,12 @@ else:
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+REST_FRAMEWORK = {
+    
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+    
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
+    
+}
