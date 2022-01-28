@@ -1,4 +1,4 @@
-"""listnr URL Configuration
+"""config URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.0/topics/http/urls/
@@ -14,8 +14,17 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import include, path
+from rest_framework import routers
+from listnr.views import SongViewSet, ReviewViewSet, ListnrViewSet
+
+router = routers.DefaultRouter()
+router.register('review', ReviewViewSet)
+router.register('song', SongViewSet)
+router.register('listnr', ListnrViewSet)
+
 
 urlpatterns = [
+    path('', include(router.urls)),
     path('admin/', admin.site.urls),
 ]
