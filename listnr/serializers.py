@@ -8,7 +8,7 @@ class ListnrSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class SongSerializer(serializers.ModelSerializer):
-    review = serializers.StringRelatedField(many=True)
+    
     
 
     class Meta:
