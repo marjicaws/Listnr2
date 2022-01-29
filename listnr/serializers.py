@@ -2,6 +2,8 @@ from rest_framework import serializers
 from .models import Listnr, Song, Review
 
 class ListnrSerializer(serializers.ModelSerializer):
+    songs = serializers.StringRelatedField(many=True)
+
 
     class Meta:
         model = Listnr

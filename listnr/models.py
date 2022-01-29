@@ -14,7 +14,7 @@ class Song(models.Model):
     title = models.CharField(max_length=256)
     image = models.CharField(max_length=300, blank=True)
     audio = models.CharField(max_length=300)
-    name_id = models.ForeignKey(Listnr, on_delete=models.CASCADE, related_name='songs'  )
+    listnr = models.ForeignKey(Listnr, on_delete=models.CASCADE, related_name='songs'  )
 
     def __str__(self):
         return self.title
@@ -22,8 +22,8 @@ class Song(models.Model):
 class Review(models.Model):
     review = models.CharField(max_length=300)
     review_title = models.CharField(max_length=256)
-    song_id = models.ForeignKey(Song, on_delete=models.CASCADE, related_name='reviews')
-    name_id = models.ForeignKey(Listnr, on_delete=models.CASCADE, related_name='reviews')
+    song = models.ForeignKey(Song, on_delete=models.CASCADE, related_name='reviews')
+    listnr = models.ForeignKey(Listnr, on_delete=models.CASCADE, related_name='reviews')
     likes = models.IntegerField()
     mix_error = models.BooleanField(default=False)
     recording_error = models.BooleanField(default=False)
