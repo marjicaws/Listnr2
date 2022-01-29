@@ -1,32 +1,30 @@
 import './App.css';
-import React from 'react'
-import axios from 'axios';
+import { useState , useEffect} from 'react';
+import { grabMusic } from './services';
 
 
-class App extends React.Component {
-  state = {
-    details : [],
-  }
-
-
-componentDidMount() {
-  let data ;
-  axios.get('https://listnr-database.herokuapp.com/')
-  .then((res) => {
-    data = res.data;
-    this.setState({
-      details : data
-    });
+function App() {
+  const [music, setMusic] = useState([]);
+  
+  useEffect(() => {
+    const getAllMusic = async () => {
+      
+      const res = await grabMusic();
+      setMusic(res.listnr)
+      console.log(res.listnr)
+    }
+    getAllMusic();
   })
-  .catch((err) => {})
-}
 
-render() {
+
   return (
-    <div>
+    
+    <div className="App">
 
+  
+  
     </div>
   );
 }
-}
+
 export default App;

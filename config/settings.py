@@ -109,7 +109,7 @@ else:
 
 
 
-
+#CORS AS WELL
 
 CORS_ALLOW_METHODS = [
 'DELETE',
