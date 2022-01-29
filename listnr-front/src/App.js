@@ -1,6 +1,6 @@
 import './App.css';
 import { useState , useEffect} from 'react';
-import { grabMusic } from './services';
+import { getMusicians } from './services';
 import { Routes, Route} from 'react-router-dom'
 import Detail from './components/Detail/Detail';
 import About from './components/About/About'
@@ -10,17 +10,17 @@ import Home from './components/Home/Home';
 
 
 function App() {
-  const [music, setMusic] = useState([]);
+  const [musicians, setMusicians] = useState([]);
   
   useEffect(() => {
-    const getAllMusic = async () => {
+    const getAllMusicians = async () => {
       
-      const res = await grabMusic();
-      setMusic(res.listnr)
-      console.log(res.listnr)
+      const res = await getMusicians();
+      setMusicians(res.data)
+      console.log(res)
     }
-    getAllMusic();
-  })
+    getAllMusicians();
+  }, [])
 
 
   return (
