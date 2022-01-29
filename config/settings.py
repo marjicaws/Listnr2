@@ -43,6 +43,7 @@ ALLOWED_HOSTS = ['listnr-database.herokuapp.com', 'localhost']
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
+    'corsheaders',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -50,13 +51,16 @@ INSTALLED_APPS = [
     'rest_framework',
     'listnr',
     'rest_framework_simplejwt',
+    
 ]
 
 MIDDLEWARE = [
+    
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -102,9 +106,29 @@ else:
 
     }
 }
-    
+
+Access-Control-Allow-Origin: 'http://localhost:3000/'
 
 
+
+CORS_ALLOW_METHODS = [
+'DELETE',
+'GET',
+'PATCH',
+'POST',
+'PUT',
+]
+CORS_ALLOW_HEADERS = [
+'accept',
+'accept-encoding',
+'authorization',
+'content-type',
+'dnt',
+'origin',
+'user-agent',
+'x-csrftoken',
+'x-requested-with',
+]
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
 
@@ -134,6 +158,15 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
+
+# CORS
+
+CORS_ORIGIN_WHITELIST = [
+
+'http://localhost:3000/',
+
+
+]
 
 
 # Static files (CSS, JavaScript, Images)
