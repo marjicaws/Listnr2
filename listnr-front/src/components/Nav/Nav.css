@@ -1,0 +1,57 @@
+.nav{
+    display: grid;
+    grid-template-areas: "title search greet link";
+    text-decoration: none;
+}
+
+.nav-title-container {
+grid-area: title;
+font-size: 1.5vw;
+text-decoration: none;
+padding: 10vh;
+}
+
+.nav-title {
+    text-decoration: none;
+    padding: 1vh;
+
+}
+
+.nav-search-container {
+grid-area: search;
+display: flex;
+align-items: center;
+text-decoration: none;
+
+}
+.nav-search{
+    font-size: large;
+    padding: 1vh 8vw;
+    display: flex;
+    align-items: center;
+    
+}
+
+.nav-user-auth-links {
+
+
+}
+
+.nav-user-greet-area {
+    grid-area: greet;
+}
+
+.nav-user-greet{
+    font-size: 1.5vw;
+    padding: 1vh ;
+}
+
+.nav-login {
+    grid-area: link;
+}
+
+.nav-login-link{
+    grid-area: link;
+    font-size: 1.5vw;
+    padding: 2vh;
+}

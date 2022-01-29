@@ -1,0 +1,26 @@
+.home-container{
+    display: grid;
+    grid-template-areas: "sidebar card img";
+}
+
+.home-nav-container {
+    display: grid;
+    grid-template-areas: "link1"
+                         "link2"
+                         "link3"
+                         "link4";
+    grid-area: sidebar;
+}
+
+.home-card-container {
+    grid-area: card;
+}
+
+.banner-img-container{
+    grid-area: img;
+}
+
+.dummy-link {
+    display: flex;
+    flex-direction: row;
+}

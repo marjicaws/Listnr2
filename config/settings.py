@@ -109,26 +109,7 @@ else:
 
 
 
-#CORS AS WELL
 
-CORS_ALLOW_METHODS = [
-'DELETE',
-'GET',
-'PATCH',
-'POST',
-'PUT',
-]
-CORS_ALLOW_HEADERS = [
-'accept',
-'accept-encoding',
-'authorization',
-'content-type',
-'dnt',
-'origin',
-'user-agent',
-'x-csrftoken',
-'x-requested-with',
-]
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
 
@@ -161,12 +142,7 @@ USE_TZ = True
 
 # CORS
 
-CORS_ORIGIN_WHITELIST = [
 
-'http://localhost:3000/',
-
-
-]
 
 
 # Static files (CSS, JavaScript, Images)
@@ -185,8 +161,35 @@ else:
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:8000',
+    'http://localhost:8001',
+    'https://listnr-database.herokuapp.com',
+]
+
+CORS_ALLOW_METHODS = [
+    'DELETE',
+    'GET',
+    'OPTIONS',
+    'PATCH',
+    'POST',
+    'PUT',
+]
+
+CORS_ALLOW_HEADERS = [
+    'accept',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
+]
+
 REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAuthenticatedOrReadOnly',
-    ]
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
 }

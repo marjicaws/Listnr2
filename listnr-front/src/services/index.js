@@ -1,6 +1,6 @@
 import axios from "axios"
 
-export const LISTNR_URL = 'https://listnr-database.herokuapp.com/listnr'
+export const LISTNR_URL = 'https://listnr-database.herokuapp.com'
 export const REVIEW_URL = 'https://listnr-database.herokuapp.com/review'
 export const SONG_URL = 'https://listnr-database.herokuapp.com/song'
 
