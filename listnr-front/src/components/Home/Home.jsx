@@ -9,71 +9,79 @@ import { getMusicians, getSongs } from "../../services";
 
 export default function Home() {
   const [musicians, setMusicans] = useState([]);
-  const [songs , setSongs] = useState([])
+  const [songs, setSongs] = useState([]);
 
   useEffect(() => {
     const grabMusicians = async () => {
-      const res = await getMusicians();
-      setMusicans(res);
-      console.log(res);
+    const res = await getMusicians();
+    setMusicans(res);
+    console.log(res);
     };
     grabMusicians();
-  }, []);
+}, []);
 
-  useEffect(() =>{
-      const grabSongs = async () => {
-          const res = await getSongs();
-          setSongs(res);
-          console.log(res)
-
-      }
-      grabSongs();
-  }, [])
-  return (
+useEffect(() => {
+    const grabSongs = async () => {
+    const res = await getSongs();
+    setSongs(res);
+    console.log(res);
+    };
+    grabSongs();
+}, []);
+return (
     <Layout>
-      <div className="home-container">
+    <div className="home-container">
         <div className="home-nav-container">
-          <Link className="home-submit-link" to="/submitmusic">
+        <Link className="home-submit-link" to="/submitmusic">
             Submit your own music
-          </Link>
-          <a className="dummy-link" href="/">
+        </Link>
+        <a className="dummy-link" href="/">
             Fan Favorites
-          </a>
+        </a>
 
-          <a className="dummy-link" href="/">
+        <a className="dummy-link" href="/">
             Recents
-          </a>
-          <a className="dummy-link" href="/">
+        </a>
+        <a className="dummy-link" href="/">
             Your Page
-          </a>
+        </a>
         </div>
 
         <div className="banner-img-container">
-          <img src="url.com" alt="banner" />
+        <img src="url.com" alt="banner" />
         </div>
         <div className="home-card-container">
-          <h1></h1>
-          {songs?.map((song) => {
-              return (
-                  <div>
-                      <p>{song.title}</p>
-                      <p>{song.image}</p>
-                      <p>{song.audio}</p>
-
-                       </div>
-              )
-          })}
-
-          {musicians?.map((musician) => {
+        {musicians?.map((musician) => {
             return (
-              <div>
-                <p>{musician.name}</p>
-                
-              </div>
+                <div>
+                <h1>{musician.name}</h1>
+                {songs?.map((song) => {
+                    if (song.title === musician.songs[0]) {
+                        return(
+                            <div>
+                            <h3 className="home-card-title">{song.title}</h3>
+                            <img className="home-card-image" src={song.image}/>
+                            <p className="home-card-audio">{song.audio}</p>
+                            </div>
+                        )
+                    }
+                })}
+                {/* {songs?.map((song) => {
+            return (
+                <div className="home-card-detail">
+
+                    <h3 className="home-card-title">{song.title}</h3>
+                    <img className="home-card-image" src={song.image}/>
+                    <p className="home-card-audio">{song.audio}</p>
+
+                    </div>
+            )
+          })} */}
+            </div>
             );
-          })}
+        })}
         </div>
-      </div>
+    </div>
     </Layout>
-  );
+);
 }

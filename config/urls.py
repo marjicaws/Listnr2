@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import include, path
 from rest_framework import routers
 from listnr.views import SongViewSet, ReviewViewSet, ListnrViewSet
+from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
 router = routers.DefaultRouter()
 router.register('review', ReviewViewSet)
@@ -25,8 +26,9 @@ router.register('listnr', ListnrViewSet)
 
 
 urlpatterns = [
-    
     path('', include(router.urls)),
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls')),
+    path('login/', TokenObtainPairView.as_view()),
+    path('refresh-token/', TokenRefreshView.as_view()),
 ]

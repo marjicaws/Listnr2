@@ -1,10 +1,10 @@
-
 import { Link } from 'react-router-dom';
 
 
 
+
 export default function Card({musician},{song}) {
-console.log(musician);
+
 
 
 

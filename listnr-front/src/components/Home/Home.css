@@ -23,7 +23,23 @@
 .home-card-container {
     grid-area: card;
 
-    margin: 0 20vw 0 22vw
+    margin: 0 5vw 0 5vw;
+
+    display: grid;
+    grid-template-areas: "img title"
+                         "img link5";
+}
+
+.home-card-title {
+grid-area: title;
+}
+
+.home-card-image {
+grid-area: img;
+}
+
+.home-card-audio {
+grid-area: link5;
 }
 
 .banner-img-container{
@@ -34,4 +50,8 @@
     display: flex;
     flex-direction: row;
     padding-left: 2vw;
+}
+
+.home-card-container{
+    border: 1px solid black;
 }

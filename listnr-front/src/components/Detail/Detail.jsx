@@ -67,8 +67,9 @@ export default function Detail() {
             </div>
             <div className='detail-song-reviews'>
                 <Link className='detail-review-link' to="/reviewform" >Leave A Review</Link>
+               
                 <h3 className='detail-song-review-title'>{review.title}</h3>
-                <h6 className='detail-song-review-user'>{review.name}</h6>
+                <h6 className='detail-song-review-user'>{review.review}</h6>
                 <h5 className='detail-song-review-check'>Marked off Review Form Answer</h5>
                 <p className='detail-song-review'>Review goes here</p>
             </div>
