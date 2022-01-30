@@ -5,10 +5,11 @@ import Card from "../Card/Card";
 import "../Home/Home.css";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import { getMusicians } from "../../services";
+import { getMusicians, getSongs } from "../../services";
 
 export default function Home() {
   const [musicians, setMusicans] = useState([]);
+  const [songs , setSongs] = useState([])
 
   useEffect(() => {
     const grabMusicians = async () => {
@@ -19,6 +20,15 @@ export default function Home() {
     grabMusicians();
   }, []);
 
+  useEffect(() =>{
+      const grabSongs = async () => {
+          const res = await getSongs();
+          setSongs(res);
+          console.log(res)
+
+      }
+      grabSongs();
+  }, [])
   return (
     <Layout>
       <div className="home-container">
@@ -43,11 +53,22 @@ export default function Home() {
         </div>
         <div className="home-card-container">
           <h1></h1>
+          {songs?.map((song) => {
+              return (
+                  <div>
+                      <p>{song.title}</p>
+                      <p>{song.image}</p>
+                      <p>{song.audio}</p>
+
+                       </div>
+              )
+          })}
 
           {musicians?.map((musician) => {
             return (
               <div>
                 <p>{musician.name}</p>
+                
               </div>
             );
           })}
