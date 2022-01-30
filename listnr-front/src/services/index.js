@@ -11,7 +11,7 @@ export const getMusicians = async () => {
 
 export const getMusician = async (id) => {
   try {
-    const response = await api.get(`/listnr/${id}`);
+    const response = await api.get(`/listnr/${id}/`);
     console.log(response)
     return response.data;
   } catch (error) {
@@ -32,7 +32,7 @@ export const createMusician = async (musician) => {
 
   export const updateMusician = async (id, musician) => {
     try {
-      const response = await api.put(`/listnr/${id}`, musician);
+      const response = await api.put(`/listnr/${id}/`, musician);
       return response.data;
     } catch (error) {
       throw error;
@@ -41,7 +41,7 @@ export const createMusician = async (musician) => {
 
   export const deleteMusician = async (id) => {
     try {
-      const response = await api.delete(`/listnr/${id}`);
+      const response = await api.delete(`/listnr/${id}/`);
       return response.data;
     } catch (error) {
       throw error;
