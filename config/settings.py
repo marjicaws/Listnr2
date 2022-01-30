@@ -162,8 +162,8 @@ else:
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOWED_ORIGINS = [
-    'http://localhost:8000',
-    'http://localhost:8001',
+    'localhost:8000',
+    'localhost:8001',
     'https://listnr-database.herokuapp.com',
 ]
 
@@ -177,7 +177,7 @@ CORS_ALLOW_METHODS = [
     'POST',
     'PUT',
 ]
-CORS_ORIGIN_ALLOW_ALL=True
+CORS_ALLOW_ALL_ORIGINS=True
 
 CORS_ALLOW_HEADERS = [
     'accept',
