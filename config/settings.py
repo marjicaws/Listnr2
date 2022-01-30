@@ -167,6 +167,8 @@ CORS_ALLOWED_ORIGINS = [
     'https://listnr-database.herokuapp.com',
 ]
 
+
+
 CORS_ALLOW_METHODS = [
     'DELETE',
     'GET',
@@ -175,6 +177,7 @@ CORS_ALLOW_METHODS = [
     'POST',
     'PUT',
 ]
+CORS_ORIGIN_ALLOW_ALL=True
 
 CORS_ALLOW_HEADERS = [
     'accept',

@@ -1,8 +1,26 @@
-import React from 'react';
+import React, { useEffect  , useState} from 'react';
 import Layout from '../Layout/Layout';
 import { Link } from 'react-router-dom'
+import { useParams } from 'react-router';
+import { getMusician } from '../../services';
+
+
 
 export default function Detail() {
+    const [musician, setMusician] = useState({})
+
+  const params = useParams();
+
+  useEffect(() => {
+    const getEachOne = async () => {
+      const res = await getMusician(params.id);
+      setMusician(res.data);
+      console.log(res.data);
+    };
+    getEachOne();
+  }, [params.id]);
+  console.log(musician);
+  
   return <Layout>
   <div className='detail'>
       <div className='detail-title'>
@@ -12,7 +30,7 @@ export default function Detail() {
       <img src = "url.com" alt="user-img"/>
       </div>
       <div className='detail-bio'>
-        <h3 className='detail-bio'>Bio goes here</h3>
+        <h3 className='detail-bio'>{}</h3>
         <h3 className='detail-career'>user career info</h3>
 
       </div>

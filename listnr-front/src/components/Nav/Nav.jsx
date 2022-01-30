@@ -1,12 +1,13 @@
 import React from 'react';
 import '../Nav/Nav.css'
 import { Link } from 'react-router-dom';
-const Nav = () => {
 
-  return <nav className='nav'>
+const Nav = (props) => {
+
+  return( <nav className='nav'>
       <div className='nav-title-container'>
 
-      <a href="/" className='.nav-title' >LiSTNr</a>
+      <Link to='/'> <h1 className='nav-title'>LiSTNr</h1></Link>
       </div>
     <div className='nav-search-container'>
     <input className='nav-search'type="text" placeholder="Search.."/>
@@ -23,6 +24,7 @@ const Nav = () => {
      
   
   </nav>
+  )
 };
 
 export default Nav;

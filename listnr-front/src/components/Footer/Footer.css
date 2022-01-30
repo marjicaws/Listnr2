@@ -1,0 +1,12 @@
+.footer{
+    display: grid;
+    grid-template-areas: "link1 link2";
+}
+
+.footer-about-link{
+    grid-area: link1;
+}
+
+.footer-affil{
+    grid-area: link2;
+}

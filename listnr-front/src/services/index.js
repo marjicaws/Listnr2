@@ -12,15 +12,18 @@ export const getMusicians = async () => {
 export const getMusician = async (id) => {
   try {
     const response = await api.get(`/listnr/${id}`);
+    console.log(response)
     return response.data;
   } catch (error) {
     throw error;
+    
   }
 };
 
 export const createMusician = async (musician) => {
     try {
       const response = await api.post("/listnr/", musician);
+      console.log(response)
       return response.data;
     } catch (error) {
       throw error;

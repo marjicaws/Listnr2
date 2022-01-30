@@ -10,10 +10,20 @@
                          "link3"
                          "link4";
     grid-area: sidebar;
+   
+    
+    
 }
-
+.home-submit-link{
+    grid-area: link1;
+    display: flex;
+    flex-direction: row;
+    padding-left: 2vw;
+}
 .home-card-container {
     grid-area: card;
+
+    margin: 0 20vw 0 22vw
 }
 
 .banner-img-container{
@@ -23,4 +33,5 @@
 .dummy-link {
     display: flex;
     flex-direction: row;
+    padding-left: 2vw;
 }

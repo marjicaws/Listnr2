@@ -2,18 +2,19 @@
     display: grid;
     grid-template-areas: "title search greet link";
     text-decoration: none;
+    padding-top: 1vh;
 }
 
 .nav-title-container {
 grid-area: title;
 font-size: 1.5vw;
 text-decoration: none;
-padding: 10vh;
+
 }
 
 .nav-title {
     text-decoration: none;
-    padding: 1vh;
+    color: black;
 
 }
 
@@ -21,12 +22,12 @@ padding: 10vh;
 grid-area: search;
 display: flex;
 align-items: center;
-text-decoration: none;
+
 
 }
 .nav-search{
     font-size: large;
-    padding: 1vh 8vw;
+    padding: 1vh 7vw;
     display: flex;
     align-items: center;
     
