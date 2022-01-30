@@ -48,7 +48,7 @@ return (
         </div>
 
         <div className="banner-img-container">
-        <img src="url.com" alt="banner" />
+        <img src="" alt="banner" />
         </div>
         <div className="home-card-container">
         {musicians?.map((musician) => {

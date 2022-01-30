@@ -30,5 +30,5 @@ class Review(models.Model):
     writing_changes = models.BooleanField(default=False)
 
     def __str__(self):
-        return self.rev_title
+        return self.review_title
 

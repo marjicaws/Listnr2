@@ -20,3 +20,11 @@ class ReviewSerializer(serializers.ModelSerializer):
     class Meta:
         model = Review
         fields = '__all__'
+
+class UserSerializer(serializers.ModelSerializer):
+    def create(self, validated_data):
+        return User.objects.create_superuser(**validated_data)
+
+    class Meta:
+        model = User
+        fields = ['username', 'password', 'email']
