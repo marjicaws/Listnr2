@@ -19,7 +19,8 @@ const Nav = (props) => {
       </div>
 
       <div className='nav-login'>
-          <h3 className='nav-login-link'>Login Link here</h3>
+          
+          <Link to='/login'>Login</Link>
       </div>
      
   
