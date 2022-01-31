@@ -16,13 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 from rest_framework import routers
-from listnr.views import SongViewSet, ReviewViewSet, ListnrViewSet
+from listnr import views
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
 router = routers.DefaultRouter()
-router.register('review', ReviewViewSet)
-router.register('song', SongViewSet)
-router.register('listnr', ListnrViewSet)
+router.register('reviews', views.ReviewViewSet)
+router.register('songs', views.SongViewSet)
+router.register('listnr', views.ListnrViewSet)
 
 
 urlpatterns = [

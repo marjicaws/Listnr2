@@ -78,7 +78,7 @@ export const createSongPost = async (music) => {
         "Content-Type": "application/json",
         'Access-Control-Allow-Origin': '*'
     }
-    const response = await api.post("/song/", music, headers);
+    const response = await api.post("/song", music, headers);
     console.log(response);
     return response.data;
   } catch (error) {
@@ -88,7 +88,7 @@ export const createSongPost = async (music) => {
 
 export const updateSongPost = async (id, music) => {
   try {
-    const response = await api.put(`/song/${id}/`, music);
+    const response = await api.put(`/song/${id}`, music);
     return response.data;
   } catch (error) {
     throw error;
