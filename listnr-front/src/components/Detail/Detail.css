@@ -1,0 +1,14 @@
+.detail {
+    display: grid;
+    grid-template-areas: "user song"
+                         "review review";
+}
+
+.detail-card {
+    grid-area: user;
+}
+
+.detail-user-image {
+    width: 20vw;
+    border-radius: 50%;
+}

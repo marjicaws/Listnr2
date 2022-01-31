@@ -3,6 +3,7 @@
     grid-template-areas: "title search greet link";
     text-decoration: none;
     padding-top: 1vh;
+    background-color: black;
 }
 
 .nav-title-container {
@@ -10,11 +11,12 @@ grid-area: title;
 font-size: 1.5vw;
 text-decoration: none;
 
+
 }
 
 .nav-title {
     text-decoration: none;
-    color: black;
+    color: white;
 
 }
 
@@ -27,7 +29,7 @@ align-items: center;
 }
 .nav-search{
     font-size: large;
-    padding: 1vh 7vw;
+    padding: 1vh 5vw;
     display: flex;
     align-items: center;
     

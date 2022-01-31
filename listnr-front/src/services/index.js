@@ -1,5 +1,6 @@
 import api from "./apiConfig";
 
+
 ////////////////// Listnrs ///////////////////
 
 export const getMusicians = async () => {
@@ -72,7 +73,12 @@ export const getSong = async (id) => {
 
 export const createSongPost = async (music) => {
   try {
-    const response = await api.post("/song/", music);
+    const headers = {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+        'Access-Control-Allow-Origin': '*'
+    }
+    const response = await api.post("/song/", music, headers);
     console.log(response);
     return response.data;
   } catch (error) {

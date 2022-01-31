@@ -8,26 +8,83 @@
     grid-template-areas: "link1"
                          "link2"
                          "link3"
-                         "link4";
+                         "link4"
+                         "link5"
+                         "link6";
     grid-area: sidebar;
+    padding: -50vw;
+    
+    background-color: black;
+    
    
     
     
 }
-.home-submit-link{
-    grid-area: link1;
-    display: flex;
-    flex-direction: row;
-    padding-left: 2vw;
+.home-link {
+    text-decoration: none;
 }
+.home-nav {
+    padding-top: 10vh;
+}
+.home-container-img {
+    grid-area: link1;
+    width: 10vw;
+    border-radius: 50%;
+    margin-top: 10vh;
+   
+margin-left: 1vw;
+}
+.home-submit-link{
+   
+}
+
+.dummy-links{
+ display: block;
+ padding: 2vw;
+ text-decoration: none;
+ list-style-type: none;
+    
+    
+}
+
+.dummy-link1 {
+
+
+    
+    
+    
+}
+
+.dummy-link2{
+
+
+
+}
+
+.dummy-link3{
+
+
+}
+
+.banner-img {
+    width: 20vw;
+    height: 200vh;
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 5vh;
+}
+
 .home-card-container {
     grid-area: card;
 
-    margin: 0 5vw 0 5vw;
-
+    margin: 1vh 5vw 1vh 5vw;
+    padding: 3vw;
     display: grid;
-    grid-template-areas: "img title"
-                         "img link5";
+    grid-template-areas: 
+                         "img link7"
+                         "img title";
+    border: 1px solid black;
+    border-radius: 25px;
 }
 
 .home-card-title {
@@ -36,22 +93,19 @@ grid-area: title;
 
 .home-card-image {
 grid-area: img;
+width: 20vw;
+
 }
 
+.home-card-name {
+text-align: left;
+padding-left: 7vw;
+}
 .home-card-audio {
-grid-area: link5;
+grid-area: link7;
 }
 
 .banner-img-container{
     grid-area: img;
 }
 
-.dummy-link {
-    display: flex;
-    flex-direction: row;
-    padding-left: 2vw;
-}
-
-.home-card-container{
-    border: 1px solid black;
-}

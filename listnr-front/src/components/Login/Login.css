@@ -44,6 +44,7 @@
   
   .form-container form button {
     width: 50%;
+    height: 50%;
     margin: 1em auto;
     background: #56c8d8;
     border: none;

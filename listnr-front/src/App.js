@@ -8,6 +8,7 @@ import Review from "./components/Review/Review";
 import Submit from "./components/Submit/Submit";
 import Home from "./components/Home/Home";
 import Login from "./components/Login/Login";
+import EditSubmit from "./components/EditSubmit/EditSubmit";
 
 
 
@@ -27,12 +28,13 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path={`/detail/:id`} element={<Detail musicians={musicians} setMusicians={setMusicians} />} />
+        <Route path="/detail/:id" element={<Detail musicians={musicians} setMusicians={setMusicians} />} />
         <Route path="/about" element={<About />} />
         <Route path="/reviewform" element={<Review />} />
         <Route path="/submitmusic" element={<Submit musicians={musicians}/>} />
         <Route path="/" element={<Home musicians={musicians} setMusicians={setMusicians} />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/detail/edit/:id"element={<EditSubmit />} />
         
       </Routes>
       

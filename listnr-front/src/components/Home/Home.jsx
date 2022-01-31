@@ -13,58 +13,85 @@ export default function Home() {
 
   useEffect(() => {
     const grabMusicians = async () => {
-    const res = await getMusicians();
-    setMusicans(res);
-    console.log(res);
+      const res = await getMusicians();
+      setMusicans(res);
+      console.log(res);
     };
     grabMusicians();
-}, []);
+  }, []);
 
-useEffect(() => {
+  useEffect(() => {
     const grabSongs = async () => {
-    const res = await getSongs();
-    setSongs(res);
-    console.log(res);
+      const res = await getSongs();
+      setSongs(res);
+      console.log(res);
     };
     grabSongs();
-}, []);
-return (
+  }, []);
+  return (
     <Layout>
-    <div className="home-container">
+      <div className="home-container">
         <div className="home-nav-container">
-        <Link className="home-submit-link" to="/submitmusic">
-            Submit your own music
-        </Link>
-        <a className="dummy-link" href="/">
-            Fan Favorites
-        </a>
+          <div className="home-nav">
+            <img
+              className="home-container-img"
+              src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png"
+            />
 
-        <a className="dummy-link" href="/">
-            Recents
-        </a>
-        <a className="dummy-link" href="/">
-            Your Page
-        </a>
+            <div className="dummy-links">
+              <ul className="dummy-links">
+                <li>
+                  <Link className="home-submit-link" to="/submitmusic">
+                    <h2> Submit your own music</h2>
+                  </Link>
+                </li>
+                <li>
+                  <a className="dummy-link1" href="/">
+                    <h2 className="home-link"> Fan Favorites</h2>
+                  </a>
+                </li>
+                <li>
+                  <a className="dummy-link2" href="/">
+                    <h2 className="home-link">Recents</h2>
+                  </a>
+                </li>
+                <li>
+                  <a className="dummy-link3" href="/">
+                    <h2 className="home-submit-link">Your Page</h2>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
 
         <div className="banner-img-container">
-        <img src="" alt="banner" />
+          <img
+            className="banner-img"
+            src="https://fdn.gsmarena.com/imgroot/news/21/08/spotify-testing-plus-subscription/popup/-x1052/gsmarena_001.jpg"
+            alt="banner"
+          />
         </div>
-        <div className="home-card-container">
-        {musicians?.map((musician) => {
+        <div>
+          {musicians?.map((musician) => {
             return (
-                <div>
-                <h1>{musician.name}</h1>
+              <div>
+                <h1 className="home-card-name">{musician.name}</h1>
                 {songs?.map((song) => {
-                    if (song.title === musician.songs[0]) {
-                        return(
-                            <div>
-                            <h3 className="home-card-title">{song.title}</h3>
-                            <img className="home-card-image" src={song.image}/>
-                            <p className="home-card-audio">{song.audio}</p>
-                            </div>
-                        )
-                    }
+                  if (song.title === musician.songs[0]) {
+                    return (
+                      <div className="home-card-container">
+                        <h3 className="home-card-title">{song.title}</h3>
+                        <img className="home-card-image" src={song.image} />
+                        <Link
+                          to={`detail/${musician.id}`}
+                          className="home-card-audio"
+                        >
+                          {song.audio}
+                        </Link>
+                      </div>
+                    );
+                  }
                 })}
                 {/* {songs?.map((song) => {
             return (
@@ -77,11 +104,11 @@ return (
                     </div>
             )
           })} */}
-            </div>
+              </div>
             );
-        })}
+          })}
         </div>
-    </div>
+      </div>
     </Layout>
-);
+  );
 }
