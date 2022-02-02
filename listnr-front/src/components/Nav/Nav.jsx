@@ -20,7 +20,7 @@ const Nav = (props) => {
 
       <div className='nav-login'>
           
-          <Link to='/login'>Login</Link>
+          <Link className="login" to='/login'><h5 className='login-text'>Login</h5></Link>
       </div>
      
   

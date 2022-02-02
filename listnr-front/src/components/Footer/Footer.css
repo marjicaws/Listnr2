@@ -1,12 +1,15 @@
 .footer{
     display: grid;
     grid-template-areas: "link1 link2";
+    background-color: black;
 }
 
 .footer-about-link{
     grid-area: link1;
+    color: white;
 }
 
 .footer-affil{
     grid-area: link2;
+    color: white;
 }

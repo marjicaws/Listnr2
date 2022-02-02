@@ -1,12 +1,18 @@
+
 import React from 'react';
 import { useNavigate } from 'react-router';
 import { useParams } from 'react-router';
 import {  deleteSongPost } from '../../services/index';
 
-export default function Delete() {
+export default function Delete({ musician }) {
 
     const params = useParams()
     const navigate = useNavigate()
+
+    // const deleteSong = async () => {
+    //   const url = `http://localhost:8000/songs/${musician.id}`
+    //   await axios.delete(url)
+    // }
 
     const handleDelete = () => {
         deleteSongPost(params.id)

@@ -1,6 +1,7 @@
 .home-container{
     display: grid;
     grid-template-areas: "sidebar card img";
+    text-decoration: none;
 }
 
 .home-nav-container {
@@ -13,7 +14,7 @@
                          "link6";
     grid-area: sidebar;
     padding: -50vw;
-    
+    text-decoration: none;
     background-color: black;
     
    
@@ -25,6 +26,7 @@
 }
 .home-nav {
     padding-top: 10vh;
+    text-decoration: none;
 }
 .home-container-img {
     grid-area: link1;
@@ -35,7 +37,8 @@
 margin-left: 1vw;
 }
 .home-submit-link{
-   
+   color: white;
+   text-decoration: none;
 }
 
 .dummy-links{
@@ -43,13 +46,13 @@ margin-left: 1vw;
  padding: 2vw;
  text-decoration: none;
  list-style-type: none;
-    
+ 
     
 }
 
 .dummy-link1 {
-
-
+    color: white;
+    text-decoration: none;
     
     
     
@@ -57,18 +60,18 @@ margin-left: 1vw;
 
 .dummy-link2{
 
-
-
+    color: white;
+    text-decoration: none;
 }
 
 .dummy-link3{
-
-
+    text-decoration: none;
+    color: white;
 }
 
 .banner-img {
     width: 20vw;
-    height: 200vh;
+    height: 100vh;
     display: flex;
     flex-wrap: wrap;
     padding-top: 5vh;
@@ -85,10 +88,13 @@ margin-left: 1vw;
                          "img title";
     border: 1px solid black;
     border-radius: 25px;
+    text-decoration: none;
 }
 
 .home-card-title {
 grid-area: title;
+text-decoration: none;
+font-size: 5vw;
 }
 
 .home-card-image {
@@ -100,9 +106,12 @@ width: 20vw;
 .home-card-name {
 text-align: left;
 padding-left: 7vw;
+text-decoration: none;
+color: black;
 }
 .home-card-audio {
 grid-area: link7;
+text-decoration: none;
 }
 
 .banner-img-container{

@@ -1,6 +1,5 @@
 import api from "./apiConfig";
 
-
 ////////////////// Listnrs ///////////////////
 
 export const getMusicians = async () => {
@@ -43,7 +42,7 @@ export const updateMusician = async (id, musician) => {
 
 export const deleteMusician = async (id) => {
   try {
-    const response = await api.delete(`/listnr/${id}/`);
+    const response = await api.delete(`/listnr/${id}`);
     return response.data;
   } catch (error) {
     throw error;
@@ -54,7 +53,7 @@ export const deleteMusician = async (id) => {
 
 export const getSongs = async () => {
   try {
-    const response = await api.get("/song/");
+    const response = await api.get("/songs/");
     return response.data;
   } catch (error) {
     throw error;
@@ -63,7 +62,7 @@ export const getSongs = async () => {
 
 export const getSong = async (id) => {
   try {
-    const response = await api.get(`/song/${id}/`);
+    const response = await api.get(`/songs/${id}/`);
     console.log(response);
     return response.data;
   } catch (error) {
@@ -74,11 +73,11 @@ export const getSong = async (id) => {
 export const createSongPost = async (music) => {
   try {
     const headers = {
-        "Accept": "application/json, text/plain, */*",
-        "Content-Type": "application/json",
-        'Access-Control-Allow-Origin': '*'
-    }
-    const response = await api.post("/song", music, headers);
+      Accept: "application/json, text/plain, */*",
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": "*",
+    };
+    const response = await api.post("/songs/", music, headers);
     console.log(response);
     return response.data;
   } catch (error) {
@@ -88,7 +87,7 @@ export const createSongPost = async (music) => {
 
 export const updateSongPost = async (id, music) => {
   try {
-    const response = await api.put(`/song/${id}`, music);
+    const response = await api.put(`/songs/${id}/`, music);
     return response.data;
   } catch (error) {
     throw error;
@@ -97,7 +96,7 @@ export const updateSongPost = async (id, music) => {
 
 export const deleteSongPost = async (id) => {
   try {
-    const response = await api.delete(`/song/${id}/`);
+    const response = await api.delete(`/songs/${id}/`);
     return response.data;
   } catch (error) {
     throw error;
@@ -108,7 +107,7 @@ export const deleteSongPost = async (id) => {
 
 export const getReviews = async () => {
   try {
-    const response = await api.get("/review/");
+    const response = await api.get("/reviews/");
     return response.data;
   } catch (error) {
     throw error;
@@ -117,7 +116,7 @@ export const getReviews = async () => {
 
 export const getReview = async (id) => {
   try {
-    const response = await api.get(`/review/${id}/`);
+    const response = await api.get(`/reviews/${id}/`);
     console.log(response);
     return response.data;
   } catch (error) {
@@ -127,7 +126,7 @@ export const getReview = async (id) => {
 
 export const createReview = async (critique) => {
   try {
-    const response = await api.post("/review/", critique);
+    const response = await api.post("/reviews/", critique);
     console.log(response);
     return response.data;
   } catch (error) {
@@ -137,7 +136,7 @@ export const createReview = async (critique) => {
 
 export const updateReview = async (id, critique) => {
   try {
-    const response = await api.put(`/review/${id}/`, critique);
+    const response = await api.put(`/reviews/${id}/`, critique);
     return response.data;
   } catch (error) {
     throw error;
@@ -146,7 +145,7 @@ export const updateReview = async (id, critique) => {
 
 export const deleteReview = async (id) => {
   try {
-    const response = await api.delete(`/review/${id}/`);
+    const response = await api.delete(`/reviews/${id}/`);
     return response.data;
   } catch (error) {
     throw error;

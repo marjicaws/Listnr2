@@ -7,5 +7,5 @@ export default function Footer() {
       <Link to='/about'>
           <h4 className='footer-about-link'>About</h4></Link>
       <h3 className='footer-affil'>Affiliates Link</h3>
-  </div>;
+  </div>
 }

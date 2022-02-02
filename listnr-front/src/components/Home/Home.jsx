@@ -8,14 +8,17 @@ import { useParams } from "react-router";
 import { getMusicians, getSongs } from "../../services";
 
 export default function Home() {
+  ////////////////////////////////////////States////////////////////////////
+
   const [musicians, setMusicans] = useState([]);
   const [songs, setSongs] = useState([]);
+
+  ////////////////////////////////////////////////////
 
   useEffect(() => {
     const grabMusicians = async () => {
       const res = await getMusicians();
       setMusicans(res);
-      console.log(res);
     };
     grabMusicians();
   }, []);
@@ -28,6 +31,9 @@ export default function Home() {
     };
     grabSongs();
   }, []);
+
+  ///////////////////////////////////////////////////
+
   return (
     <Layout>
       <div className="home-container">
@@ -76,22 +82,26 @@ export default function Home() {
           {musicians?.map((musician) => {
             return (
               <div>
-                <h1 className="home-card-name">{musician.name}</h1>
-                {songs?.map((song) => {
-                  if (song.title === musician.songs[0]) {
-                    return (
+                {musician.songs?.map((song) => {
+                  //   if (song?.title === musician.songs[0]) {
+                  return (
+                    <>
+                      <Link to={`song-detail/${song.id}/musician/${musician.id}`}>
+                        <h1 className="home-card-name">{musician.name}</h1>
+                      </Link>
                       <div className="home-card-container">
-                        <h3 className="home-card-title">{song.title}</h3>
+                        <h2 className="home-card-title">{song.title}</h2>
                         <img className="home-card-image" src={song.image} />
                         <Link
-                          to={`detail/${musician.id}`}
+                          to={`song-detail/${song.id}/musician/${musician.id}`}
                           className="home-card-audio"
                         >
                           {song.audio}
                         </Link>
                       </div>
-                    );
-                  }
+                    </>
+                  );
+                  //   }
                 })}
                 {/* {songs?.map((song) => {
             return (

@@ -5,7 +5,7 @@ import { useParams } from 'react-router';
 import { getMusician, getReviews, getSong } from '../../services';
 import '../Detail/Detail.css'
 import Delete from '../Delete/Delete.jsx'
-import EditSubmit from '../EditSubmit/EditSubmit';
+
 
 
 
@@ -19,19 +19,19 @@ export default function Detail() {
 
   useEffect(() => {
     const getEachOne = async () => {
-      const res = await getMusician(params.id);
+      const res = await getMusician(params.musician_id);
       setMusician(res);
-      console.log(res);
+     
     };
     getEachOne();
   }, [params.id]);
-  console.log(musician);
+  
   
   useEffect(() => {
       const getEachSong = async () => {
-          const res = await getSong(params.id);
+          const res = await getSong(params.song_id);
           setSong(res)
-          console.log(res)
+          
 
       }
       getEachSong();
@@ -41,7 +41,7 @@ export default function Detail() {
       const getEachReview = async () => {
           const res = await getReviews()
           setReview(res)
-          console.log(res)
+         
 
       }
       getEachReview()
@@ -63,14 +63,14 @@ export default function Detail() {
       </div>
 
     <div className='detail-music'>
-        <h1>Music Upload Shows here.</h1>
+        <h1>LiSTNr's Sounds.</h1>
         <div className='detail-user-songs'>
             <div className='div-song-details'>
             <img className='detail-song-img' src={song.image} alt='song image' />
-            <h3 className='detail-song-title'>{song.title}</h3>
-            <h3 className='detail-song-audio'>{song.audio}</h3>
+            <h2 className='detail-song-title'>{song.title}</h2>
+            <h3 className='detail-song-audio'><a href={song.audio} >{song.audio}</a></h3>
             </div>
-            <Link to={`/detail/edit/${song.id}`} ><button className='delete-btn'>Edit</button></Link>
+            <Link to={`/edit-song/${params.song_id}`} ><button className='delete-btn'>Edit</button></Link>
             <Delete />
 
             <div className='detail-song-reviews'>

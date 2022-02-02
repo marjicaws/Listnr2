@@ -3,6 +3,7 @@ import { createSongPost } from "../../services";
 import Layout from "../Layout/Layout";
 import { useNavigate } from 'react-router-dom'
 
+
 export default function Submit({ musicians }) {
   const [audio, setAudio] = useState("");
   const [title, setTitle] = useState("");
@@ -18,7 +19,6 @@ export default function Submit({ musicians }) {
     setMusicianId(id)
   };
 
-  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -26,7 +26,7 @@ export default function Submit({ musicians }) {
       audio,
       title,
       image,
-      listnr: musicianId,
+      artist: musicianId,
     };
     await createSongPost(newSubmit);
     navigate("/")

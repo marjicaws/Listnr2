@@ -1,17 +1,21 @@
 .form-container {
     align-self: center;
     padding: 1em;
-    width: 50%;
-    height: 80%;
+    width: 50vw;
+    height: 30vw;
     margin: 4em auto;
     border: 2px solid #b0bec5;
     border-radius: 6px;
     box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
     transition: all 2s ease;
+    background-color: black;
+
   }
   
   .form-container h3 {
     text-align: center;
+    color: white;
+
   }
   
   .form-container form {
@@ -20,6 +24,7 @@
     justify-content: center;
     margin: auto;
     width: 80%;
+    color: white;
   }
   
   .form-container form input {
@@ -31,15 +36,18 @@
     border: 2px solid #e0e0e0;
     outline: none;
     transition: all 0.4s ease;
+    color: white;
   }
   
   .form-container form input:focus,
   .form-container form input:active {
     border: 2px solid #82ada9;
+    color: white;
   }
   
   .form-container form input:valid {
     border: 2px solid #66bb6a;
+    color: white;
   }
   
   .form-container form button {
@@ -56,8 +64,10 @@
   
   .form-container form a {
     margin: auto;
+    color: white;
   }
   
   .form-container form label {
     margin-top: 0.6em;
+    color: white;
   }

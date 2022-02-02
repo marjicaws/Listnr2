@@ -17,6 +17,7 @@ text-decoration: none;
 .nav-title {
     text-decoration: none;
     color: white;
+    font-size: 3vw;
 
 }
 
@@ -42,19 +43,38 @@ align-items: center;
 
 .nav-user-greet-area {
     grid-area: greet;
+    color: white;
+    
 }
 
 .nav-user-greet{
-    font-size: 1.5vw;
-    padding: 1vh ;
+    font-size: 2vw;
+    padding: 1.2vh ;
+    
 }
 
 .nav-login {
     grid-area: link;
+    
+    color: white;
+    font-size: 2.5vw;
+    
+    text-decoration: none;
 }
 
 .nav-login-link{
     grid-area: link;
-    font-size: 1.5vw;
-    padding: 2vh;
+    font-size: 2vw;
+    
+    color: white;
+    text-decoration: none;
+}
+
+.login {
+    text-decoration: none;
+    color: white;
+    
+}
+.login-text{
+    
 }

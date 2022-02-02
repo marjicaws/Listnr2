@@ -1,6 +1,6 @@
 import "./App.css";
 import { useState, useEffect } from "react";
-import { getMusicians } from "./services";
+import { getMusician, getMusicians } from "./services";
 import { Routes, Route } from "react-router-dom";
 import Detail from "./components/Detail/Detail";
 import About from "./components/About/About";
@@ -14,7 +14,12 @@ import EditSubmit from "./components/EditSubmit/EditSubmit";
 
 function App() {
   const [musicians, setMusicians] = useState([]);
+  const [musician, setMusician ] = useState([])
+
   
+  
+
+
 
   useEffect(() => {
     const getAllMusicians = async () => {
@@ -28,13 +33,13 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/detail/:id" element={<Detail musicians={musicians} setMusicians={setMusicians} />} />
+        <Route path="/song-detail/:song_id/musician/:musician_id" element={<Detail musicians={musicians} setMusicians={setMusicians} />} />
         <Route path="/about" element={<About />} />
         <Route path="/reviewform" element={<Review />} />
         <Route path="/submitmusic" element={<Submit musicians={musicians}/>} />
-        <Route path="/" element={<Home musicians={musicians} setMusicians={setMusicians} />} />
+        <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/detail/edit/:id"element={<EditSubmit />} />
+        <Route path="/edit-song/:id" element={<EditSubmit musicians={musicians} />} />
         
       </Routes>
       
