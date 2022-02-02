@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router';
 import { useParams } from 'react-router';
 import {  deleteSongPost } from '../../services/index';
 
-export default function Delete({ musician }) {
+export default function Delete() {
 
     const params = useParams()
     const navigate = useNavigate()

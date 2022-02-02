@@ -8,13 +8,13 @@ class ReviewSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = Review
-        fields = ['id', 'review_title', 'review' , 'song', 'listnr', 'likes', 'mix_error','recording_error', 'writing_changes' ]
+        fields = '__all__'
 
 class SongSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = Song
-        fields = ['title', 'image', 'audio', 'listnr']
+        fields = '__all__'
 
 
 
@@ -31,7 +31,7 @@ class ListnrSerializer(serializers.ModelSerializer):
     songs = SongSerializer(many=True)
     class Meta:
         model = Listnr
-        fields = ['name', 'bio', 'career' ]
+        fields = '__all__'
 
 
     def create(self, validated_data):

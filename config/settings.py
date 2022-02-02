@@ -87,6 +87,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'config.wsgi.application'
 
+APPEND_SLASH=False
+
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
@@ -99,8 +101,8 @@ else:
     DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'listnr',
-        'USER': 'listnr_admin',
+        'NAME': 'listner',
+        'USER': 'listner_admin',
         'PASSWORD': 'password',
         'HOST': 'localhost',
 

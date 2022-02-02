@@ -3,7 +3,7 @@ import { updateSongPost, getSong } from "../../services";
 import Layout from "../Layout/Layout";
 import { useNavigate, useParams } from "react-router-dom";
 
-export default function EditSubmit({ musicians }) {
+export default function EditSubmit() {
   const [audio, setAudio] = useState("");
   const [title, setTitle] = useState("");
   const [image, setImage] = useState("");
