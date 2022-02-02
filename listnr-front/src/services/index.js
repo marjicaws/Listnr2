@@ -1,6 +1,15 @@
 import api from "./apiConfig";
 
+
+const getToken = () => {
+  return new Promise((resolve) => {
+    resolve(`Bearer ${localStorage.getItem("token") || null}`);
+  });
+};
+
 ////////////////// Listnrs ///////////////////
+
+
 
 export const getMusicians = async () => {
   try {
@@ -72,10 +81,17 @@ export const getSong = async (id) => {
 
 export const createSongPost = async (music) => {
   try {
+    // const headers = {
+    //   Accept: "application/json, text/plain, */*",
+    //   "Content-Type": "application/json",
+    //   "Access-Control-Allow-Origin": "*",
+    // };
+    const token = await getToken();
+
     const headers = {
-      Accept: "application/json, text/plain, */*",
-      "Content-Type": "application/json",
-      "Access-Control-Allow-Origin": "*",
+      headers: {
+        Authorization: token,
+      },
     };
     const response = await api.post("/songs/", music, headers);
     console.log(response);
@@ -87,7 +103,14 @@ export const createSongPost = async (music) => {
 
 export const updateSongPost = async (id, music) => {
   try {
-    const response = await api.put(`/songs/${id}/`, music);
+    const token = await getToken();
+
+    const headers = {
+      headers: {
+        Authorization: token,
+      },
+    };
+    const response = await api.put(`/songs/${id}/`, music, headers);
     return response.data;
   } catch (error) {
     throw error;
@@ -96,7 +119,14 @@ export const updateSongPost = async (id, music) => {
 
 export const deleteSongPost = async (id) => {
   try {
-    const response = await api.delete(`/songs/${id}/`);
+    const token = await getToken();
+
+    const headers = {
+      headers: {
+        Authorization: token,
+      },
+    };
+    const response = await api.delete(`/songs/${id}/`, headers);
     return response.data;
   } catch (error) {
     throw error;
