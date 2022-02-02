@@ -14,7 +14,7 @@ import EditSubmit from "./components/EditSubmit/EditSubmit";
 
 function App() {
   const [musicians, setMusicians] = useState([]);
-  const [musician, setMusician ] = useState([])
+  
 
   
   

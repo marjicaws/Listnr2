@@ -2,7 +2,7 @@ import React, { useEffect  , useState} from 'react';
 import Layout from '../Layout/Layout';
 import { Link } from 'react-router-dom'
 import { useParams } from 'react-router';
-import { getMusician, getReviews, getSong } from '../../services';
+import { getMusician, getSong } from '../../services';
 import '../Detail/Detail.css'
 import Delete from '../Delete/Delete.jsx'
 
@@ -13,7 +13,7 @@ import Delete from '../Delete/Delete.jsx'
 export default function Detail() {
     const [musician, setMusician] = useState({})
     const [song, setSong] = useState({})
-    const [review, setReview] = useState({})
+    
 
   const params = useParams();
 
@@ -37,15 +37,7 @@ export default function Detail() {
       getEachSong();
   },[params.id])
 
-  useEffect(() => {
-      const getEachReview = async () => {
-          const res = await getReviews()
-          setReview(res)
-         
-
-      }
-      getEachReview()
-  },[params.id])
+  
 
   return( <Layout>
   <div className='detail'>
@@ -66,7 +58,7 @@ export default function Detail() {
         <h1>LiSTNr's Sounds.</h1>
         <div className='detail-user-songs'>
             <div className='div-song-details'>
-            <img className='detail-song-img' src={song.image} alt='song image' />
+            <img className='detail-song-img' src={song.image} alt='music pic' />
             <h2 className='detail-song-title'>{song.title}</h2>
             <h3 className='detail-song-audio'><a href={song.audio} >{song.audio}</a></h3>
             </div>
@@ -76,8 +68,7 @@ export default function Detail() {
             <div className='detail-song-reviews'>
                 <Link className='detail-review-link' to="/reviewform" >Leave A Review</Link>
                
-                <h3 className='detail-song-review-title'>{review.title}</h3>
-                <h6 className='detail-song-review-user'>{review.review}</h6>
+                
                 <h5 className='detail-song-review-check'>Marked off Review Form Answer</h5>
                 <p className='detail-song-review'>Review goes here</p>
             </div>

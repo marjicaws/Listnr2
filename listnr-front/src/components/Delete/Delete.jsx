@@ -15,7 +15,7 @@ export default function Delete({ musician }) {
     // }
 
     const handleDelete = () => {
-        deleteSongPost(params.id)
+        deleteSongPost(params.song_id)
         navigate('/')
     }
 

@@ -1,10 +1,10 @@
 import React from "react";
 import Layout from "../Layout/Layout";
 import { Link } from "react-router-dom";
-import Card from "../Card/Card";
+
 import "../Home/Home.css";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router";
+
 import { getMusicians, getSongs } from "../../services";
 
 export default function Home() {
@@ -42,6 +42,7 @@ export default function Home() {
             <img
               className="home-container-img"
               src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png"
+              alt="banner-img"
             />
 
             <div className="dummy-links">
@@ -91,7 +92,7 @@ export default function Home() {
                       </Link>
                       <div className="home-card-container">
                         <h2 className="home-card-title">{song.title}</h2>
-                        <img className="home-card-image" src={song.image} />
+                        <img className="home-card-image" src={song.image} alt="img for songs" />
                         <Link
                           to={`song-detail/${song.id}/musician/${musician.id}`}
                           className="home-card-audio"
